@@ -1,63 +1,139 @@
-function Lands(landName, landValue){
-    this.landName = landName;
-    this.landValue = landValue;
-    this.magicCrops = function(skills){
-      if (skills.wage > 4500){
-        console.log("you can plant magic corn")
-      }
-    else if (skills.wage >2500 && skills.wage <4500){
-        console.log("you can plant semi-magic mushrooms")
-      }
-    else {
-      console.log("you need higher wages to plant any magic crops")
-    }
+$(document).ready(function(){
 
-  };
+//buttons in greenLand
+  $(".farmer").on("click",function(){
+    greenLand.magicCrops(farmer);
+  });
 
-}
+  $(".cropDuster").on("click",function(){
+    greenLand.magicCrops(cropDuster);
+  });
 
-function Gnome(name, height, age){
-  this.name = name;
-  this.height = height;
-  this.age = age;
-  this.town = function(lands, height){
-    var tempValue = lands.landValue + this.height;
-    if(tempValue > 100){
-      console.log("welcome to the Land of Tall Gnomes")
-      this.name = "Sir " + name;
-    }
-  else {
-    console.log("you need to grow in order to live in this land")
-  }
-};
-}
+  $(".pigBreeder").on("click",function(){
+    greenLand.magicCrops(pigBreeder);
+  });
+
+  $(".villageIdiot").on("click",function(){
+    greenLand.magicCrops(villageIdiot);
+  });
+
+//gnome circles in greenland
+  $(".bob img").on("click", function(){
+    bob.socialStatus(greenLand,bob);
+  });
+
+  $(".doug img").on("click", function(){
+    doug.socialStatus(greenLand,doug);
+  });
+
+  $(".steve img").on("click", function(){
+    steve.socialStatus(greenLand,steve);
+  });
+
+  $(".chip img").on("click", function(){
+    chip.socialStatus(greenLand,chip);
+  });
+
+//buttons in blueVille
+  $(".farmer").on("click",function(){
+    blueVille.magicCrops(farmer);
+  });
+
+  $(".cropDuster").on("click",function(){
+    blueVille.magicCrops(cropDuster);
+  });
+
+  $(".pigBreeder").on("click",function(){
+    blueVille.magicCrops(pigBreeder);
+  });
+
+  $(".villageIdiot").on("click",function(){
+    blueVille.magicCrops(villageIdiot);
+  });
+
+//gnome circles in blueVille
+  $(".bob img").on("click", function(){
+    bob.socialStatus(blueVille,bob);
+  });
+
+  $(".doug img").on("click", function(){
+    doug.socialStatus(blueVille,doug);
+  });
+
+  $(".steve img").on("click", function(){
+    steve.socialStatus(blueVille,steve);
+  });
+
+  $(".chip img").on("click", function(){
+    chip.socialStatus(blueVille,chip);
+  });
+
+  //buttons in rubyLane
+    $(".farmer").on("click",function(){
+      rubyLane.magicCrops(farmer);
+    });
+
+    $(".cropDuster").on("click",function(){
+    rubyLane.magicCrops(cropDuster);
+    });
+
+    $(".pigBreeder").on("click",function(){
+      rubyLane.magicCrops(pigBreeder);
+    });
+
+    $(".villageIdiot").on("click",function(){
+      rubyLane.magicCrops(villageIdiot);
+    });
+
+  //gnome circles in rubyLane
+    $(".bob img").on("click", function(){
+      bob.socialStatus(rubyLane,bob);
+    });
+
+    $(".doug img").on("click", function(){
+      doug.socialStatus(rubyLane,doug);
+    });
+
+    $(".steve img").on("click", function(){
+      steve.socialStatus(rubyLane,steve);
+    });
+
+    $(".chip img").on("click", function(){
+      chip.socialStatus(rubyLane,chip);
+    });
+//buttons in sulpherTown
+  $(".farmer").on("click",function(){
+    sulpherTown.magicCrops(farmer);
+  });
+
+  $(".cropDuster").on("click",function(){
+  sulpherTown.magicCrops(cropDuster);
+  });
+
+  $(".pigBreeder").on("click",function(){
+    sulpherTown.magicCrops(pigBreeder);
+  });
+
+  $(".villageIdiot").on("click",function(){
+    sulpherTown.magicCrops(villageIdiot);
+  });
+
+//gnome circles in sulpherTown
+  $(".bob img").on("click", function(){
+    bob.socialStatus(sulpherTown,bob);
+  });
+
+  $(".doug img").on("click", function(){
+    doug.socialStatus(sulpherTown,doug);
+  });
+
+  $(".steve img").on("click", function(){
+    steve.socialStatus(sulpherTown,steve);
+  });
+
+  $(".chip img").on("click", function(){
+    chip.socialStatus(sulpherTown,chip);
+  });
 
 
-function Skills(job,wage){
-    this.job = job;
-    this.wage = wage;
-    this.health = function(wage,lands) {
-
-    var tempHealth = this.wage * lands.landValue;
-    if (tempHealth > 5000 ){
-      console.log("you are a very healthy gnome.")
-    }
-  else{
-    console.log('uh oh, you are not a healthy gnome.')
-  }
-};
-}
-
-
-
-var Bob = new Gnome("bob",36, 104);
-
-
-var GoldenEggPolisher = new Skills("eggPolisher",5000);
-GoldenEggPolisher.wage;
-
-
-var EmeraldIsland = new Lands("EmeraldIsland",2500);
-EmeraldIsland.magicCrops(5000);
-
-Bob.town(EmeraldIsland, this.height);
+});
